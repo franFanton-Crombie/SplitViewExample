@@ -43,7 +43,6 @@ const navigatorProps = {
 function TabNavigator() {
   return (
     <Tab.Navigator {...navigatorProps}>
-      <Tab.Screen name="Split" component={SplitScreen} />
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>

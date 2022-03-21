@@ -1,39 +1,37 @@
 import * as React from 'react';
-import {isIpad} from '../../helpers/constants';
-import MasterSplitStack from './stacks/MasterSplitStack';
 import DetailsSplitStack from './stacks/DetailsSplitStack';
 import useSystemBack from './useSystemBack';
-import {StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import MenuVertical from '../screens/MenuVertical';
 
 const SplitScreen = () => {
-  if (isIpad()) {
-    useSystemBack();
+  useSystemBack();
 
-    return (
-      <View style={styles.root}>
-        <View style={styles.masterView}>
-          <MenuVertical />
-        </View>
-        <View style={styles.detailView}>
-          <DetailsSplitStack />
-        </View>
+  return (
+    <View style={styles.container}>
+      <View style={styles.menuVertical}>
+        <View
+          style={{
+            backgroundColor: 'white',
+            height: Dimensions.get('screen').height * 0.087,
+          }}
+        />
+        <MenuVertical />
       </View>
-    );
-  }
-
-  return <MasterSplitStack />;
+      <View style={styles.detail}>
+        <DetailsSplitStack />
+      </View>
+    </View>
+  );
 };
 
 export default SplitScreen;
 
 const styles = StyleSheet.create({
-  root: {flex: 1, flexDirection: 'row'},
-  masterView: {flex: 1, maxWidth: 150, borderWidth: 1, borderColor: 'blue'},
-  detailView: {
+  container: {flex: 1, flexDirection: 'row', backgroundColor: 'red'},
+  menuVertical: {flex: 1, maxWidth: 150},
+  detail: {
     flex: 1,
     overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: 'blue',
   },
 });
