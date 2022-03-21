@@ -25,8 +25,8 @@ const MenuVertical = () => {
         <Image
           source={require('../assets/home.png')}
           style={{
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
             opacity: 0.5,
           }}
         />
@@ -48,8 +48,8 @@ const MenuVertical = () => {
         <Image
           source={require('../assets/message.png')}
           style={{
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
             opacity: 0.5,
           }}
         />
@@ -71,8 +71,8 @@ const MenuVertical = () => {
         <Image
           source={require('../assets/user.png')}
           style={{
-            width: 50,
-            height: 50,
+            width: 40,
+            height: 40,
             opacity: 0.5,
           }}
         />

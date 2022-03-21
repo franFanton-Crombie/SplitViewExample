@@ -29,7 +29,7 @@ export default SplitScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, flexDirection: 'row', backgroundColor: 'white'},
-  menuVertical: {flex: 1, maxWidth: 150},
+  menuVertical: {flex: 1, maxWidth: 100},
   detail: {
     flex: 1,
     overflow: 'hidden',
