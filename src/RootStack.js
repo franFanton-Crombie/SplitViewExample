@@ -5,35 +5,38 @@ import {isIpad} from '../helpers/constants';
 import PruebaScreen from './screens/Prueba';
 import MaintenanceScreen from './screens/Maintenance';
 import SplitScreen from './SplitScreen';
+import {NavigationContainer} from '@react-navigation/native';
 const Stack = createStackNavigator();
 
 function RootStack() {
   return (
-    <Stack.Navigator>
-      {isIpad() ? (
+    <NavigationContainer>
+      <Stack.Navigator>
+        {isIpad() ? (
+          <Stack.Screen
+            name="Split"
+            component={SplitScreen}
+            options={{headerShown: false}}
+          />
+        ) : (
+          <Stack.Screen
+            name="Main"
+            component={TabNavigator}
+            options={{headerShown: false}}
+          />
+        )}
         <Stack.Screen
-          name="Split"
-          component={SplitScreen}
+          name="Prueba"
+          component={PruebaScreen}
           options={{headerShown: false}}
         />
-      ) : (
         <Stack.Screen
-          name="Main"
-          component={TabNavigator}
+          name="Maintenance"
+          component={MaintenanceScreen}
           options={{headerShown: false}}
         />
-      )}
-      <Stack.Screen
-        name="Prueba"
-        component={PruebaScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Maintenance"
-        component={MaintenanceScreen}
-        options={{headerShown: false}}
-      />
-    </Stack.Navigator>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
