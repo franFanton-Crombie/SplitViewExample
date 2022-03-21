@@ -1,9 +1,12 @@
 import * as React from 'react';
 import {Image, View, Text, TouchableOpacity} from 'react-native';
-import {pushChatScreen, pushmaintenanceScreen} from '../SplitScreen/navigation';
+import {
+  pushMessageScreen,
+  pushHomeScreen,
+  pushProfileScreen,
+} from '../SplitScreen/navigation';
 
 const MenuVertical = () => {
-  const onPress = () => pushChatScreen({userId: '1'});
   return (
     <View
       style={{
@@ -16,7 +19,9 @@ const MenuVertical = () => {
           margin: 5,
           alignItems: 'center',
         }}
-        onPress={onPress}>
+        onPress={() => {
+          pushHomeScreen();
+        }}>
         <Image
           source={require('../assets/home.png')}
           style={{
@@ -30,31 +35,7 @@ const MenuVertical = () => {
             alignItems: 'center',
             padding: 5,
           }}>
-          <Text>AIRCRAFT</Text>
-        </View>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={{
-          flexDirection: 'column',
-          margin: 5,
-          alignItems: 'center',
-        }}
-        onPress={() => pushmaintenanceScreen()}>
-        <Image
-          source={require('../assets/home.png')}
-          style={{
-            width: 50,
-            height: 50,
-            opacity: 0.5,
-          }}
-        />
-        <View
-          style={{
-            alignItems: 'center',
-            padding: 5,
-          }}>
-          <Text>MAINTENANCE</Text>
+          <Text>Home</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity
@@ -63,9 +44,9 @@ const MenuVertical = () => {
           margin: 5,
           alignItems: 'center',
         }}
-        onPress={onPress}>
+        onPress={() => pushMessageScreen()}>
         <Image
-          source={require('../assets/home.png')}
+          source={require('../assets/message.png')}
           style={{
             width: 50,
             height: 50,
@@ -77,7 +58,7 @@ const MenuVertical = () => {
             alignItems: 'center',
             padding: 5,
           }}>
-          <Text>CALENDAR</Text>
+          <Text>Message</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity
@@ -86,9 +67,9 @@ const MenuVertical = () => {
           margin: 5,
           alignItems: 'center',
         }}
-        onPress={onPress}>
+        onPress={() => pushProfileScreen()}>
         <Image
-          source={require('../assets/home.png')}
+          source={require('../assets/user.png')}
           style={{
             width: 50,
             height: 50,
@@ -100,30 +81,7 @@ const MenuVertical = () => {
             alignItems: 'center',
             padding: 5,
           }}>
-          <Text>REPORT</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          flexDirection: 'column',
-          margin: 5,
-          alignItems: 'center',
-        }}
-        onPress={onPress}>
-        <Image
-          source={require('../assets/home.png')}
-          style={{
-            width: 50,
-            height: 50,
-            opacity: 0.5,
-          }}
-        />
-        <View
-          style={{
-            alignItems: 'center',
-            padding: 5,
-          }}>
-          <Text>MORE</Text>
+          <Text>Profile</Text>
         </View>
       </TouchableOpacity>
     </View>

@@ -2,9 +2,10 @@ import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {setDetailsNavigator} from '../../navigation/detailsNavigator';
-import Profile from '../../screens/Profile';
-
-import Maintenance from '../../screens/Maintenance';
+import Maintenance from '../../screens/Maintenance/Maintenance';
+import Profile from '../../screens/Profile/Profile';
+import Home from '../../screens/Home/Home';
+import Message from '../../screens/Message/Message';
 
 const DetailsStack = createStackNavigator();
 
@@ -16,7 +17,12 @@ const DetailsSplitStack = () => (
      * */
     independent
     ref={setDetailsNavigator}>
-    <DetailsStack.Navigator initialRouteName="Profile">
+    <DetailsStack.Navigator initialRouteName="Home">
+      <DetailsStack.Screen
+        name="Home"
+        component={Home}
+        options={{title: 'Home'}}
+      />
       <DetailsStack.Screen
         name="Profile"
         component={Profile}
@@ -26,6 +32,11 @@ const DetailsSplitStack = () => (
         name="Maintenance"
         component={Maintenance}
         options={{title: 'Maintenance'}}
+      />
+      <DetailsStack.Screen
+        name="Message"
+        component={Message}
+        options={{title: 'Message'}}
       />
     </DetailsStack.Navigator>
   </NavigationContainer>

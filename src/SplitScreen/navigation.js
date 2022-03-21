@@ -4,17 +4,8 @@ import {
 } from '../navigation/detailsNavigator';
 import {push} from '../navigation/masterNavigator';
 
-import {
-  CHAT_FILTER_SCREEN,
-  PROFILE_SCREEN,
-  PRUEBA_SCREEN,
-  MAINTENANCE_SCREEN,
-} from './consts';
-
-export const pushChatsFilters = () => push(CHAT_FILTER_SCREEN);
-
-export const pushChatScreen = () => {
-  const args = [PROFILE_SCREEN];
+export const pushHomeScreen = () => {
+  const args = ['Home'];
 
   if (isDetailsNavigatorMounted()) {
     return detailsNavigate(...args);
@@ -22,8 +13,9 @@ export const pushChatScreen = () => {
 
   return push(...args);
 };
-export const pushPruebaScreen = () => {
-  const args = [PRUEBA_SCREEN];
+
+export const pushMessageScreen = () => {
+  const args = ['Message'];
 
   if (isDetailsNavigatorMounted()) {
     return detailsNavigate(...args);
@@ -31,8 +23,9 @@ export const pushPruebaScreen = () => {
 
   return push(...args);
 };
-export const pushmaintenanceScreen = () => {
-  const args = [MAINTENANCE_SCREEN];
+
+export const pushProfileScreen = () => {
+  const args = ['Profile'];
 
   if (isDetailsNavigatorMounted()) {
     return detailsNavigate(...args);

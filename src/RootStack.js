@@ -2,10 +2,12 @@ import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
 import {isIpad} from '../helpers/constants';
-import PruebaScreen from './screens/Prueba';
-import MaintenanceScreen from './screens/Maintenance';
 import SplitScreen from './SplitScreen';
 import {NavigationContainer} from '@react-navigation/native';
+import Maintenance from './screens/Maintenance/Maintenance';
+import Message from './screens/Message/Message';
+import Profile from './screens/Profile/Profile';
+import Home from './screens/Home/Home';
 const Stack = createStackNavigator();
 
 function RootStack() {
@@ -26,13 +28,23 @@ function RootStack() {
           />
         )}
         <Stack.Screen
-          name="Prueba"
-          component={PruebaScreen}
+          name="Maintenance"
+          component={Maintenance}
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="Maintenance"
-          component={MaintenanceScreen}
+          name="Home"
+          component={Home}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Message"
+          component={Message}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

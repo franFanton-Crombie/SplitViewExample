@@ -1,27 +1,14 @@
 import * as React from 'react';
-import {Text, Image, Switch, View} from 'react-native';
+import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import AlignCenter from './components/AlignCenter';
-import {useIsTablet} from './IsTabletContext';
-import Profile from './screens/Profile';
-import SplitScreen from './SplitScreen';
+import Profile from './screens/Profile/Profile';
+import Home from './screens/Home/Home';
+import Message from './screens/Message/Message';
 const Tab = createBottomTabNavigator();
-
-const HomeScreen = () => {
-  const [value, setValue] = useIsTablet();
-
-  return (
-    <AlignCenter>
-      <Text>Home</Text>
-      <Text>isTable: </Text>
-      <Switch value={value} onValueChange={setValue} />
-    </AlignCenter>
-  );
-};
 
 const iconMap = {
   Home: require('./assets/home.png'),
-  Split: require('./assets/message.png'),
+  Message: require('./assets/message.png'),
   Profile: require('./assets/user.png'),
 };
 
@@ -34,7 +21,11 @@ const navigatorProps = {
     tabBarIcon: ({size, focused}) => (
       <Image
         source={iconMap[route.name]}
-        style={{width: size, height: size, opacity: focused ? 1 : 0.5}}
+        style={{
+          width: 30,
+          height: 30,
+          opacity: focused ? 1 : 0.5,
+        }}
       />
     ),
   }),
@@ -43,7 +34,8 @@ const navigatorProps = {
 function TabNavigator() {
   return (
     <Tab.Navigator {...navigatorProps}>
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Message" component={Message} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );

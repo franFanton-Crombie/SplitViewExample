@@ -1,12 +1,9 @@
 import {useNavigation} from '@react-navigation/core';
 import * as React from 'react';
 import {Text} from 'react-native';
-import AlignCenter from '../components/AlignCenter';
-import {pushPruebaScreen} from '../navigation/Navigator';
+import AlignCenter from '../../components/AlignCenter';
 
 const Profile = () => {
-  const navigation = useNavigation();
-  const userId = '1';
   return (
     <AlignCenter>
       <Text
@@ -16,10 +13,9 @@ const Profile = () => {
           padding: 10,
         }}
         onPress={() => {
-          pushPruebaScreen();
           console.log('asd');
         }}>
-        PROFILE PA
+        PROFILE SCREEN
       </Text>
     </AlignCenter>
   );

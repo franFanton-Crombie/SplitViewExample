@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text} from 'react-native';
-import AlignCenter from '../components/AlignCenter';
+import AlignCenter from '../../components/AlignCenter';
 
-const Prueba = () => (
+const Maintenance = () => (
   <AlignCenter>
     <Text
       style={{
@@ -10,9 +10,9 @@ const Prueba = () => (
         opacity: 0.6,
         padding: 10,
       }}>
-      Prueba PA
+      MAINTENANCE SCREEN
     </Text>
   </AlignCenter>
 );
 
-export default Prueba;
+export default Maintenance;

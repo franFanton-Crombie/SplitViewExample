@@ -28,7 +28,7 @@ const SplitScreen = () => {
 export default SplitScreen;
 
 const styles = StyleSheet.create({
-  container: {flex: 1, flexDirection: 'row', backgroundColor: 'red'},
+  container: {flex: 1, flexDirection: 'row', backgroundColor: 'white'},
   menuVertical: {flex: 1, maxWidth: 150},
   detail: {
     flex: 1,
