@@ -3,8 +3,10 @@ import RootStack from './RootStack';
 import {IsTabletContextProvider} from './IsTabletContext';
 
 const App = () => {
+  const state = React.useState(true);
+
   return (
-    <IsTabletContextProvider>
+    <IsTabletContextProvider value={state}>
       <RootStack />
     </IsTabletContextProvider>
   );
