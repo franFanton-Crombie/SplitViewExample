@@ -10,23 +10,18 @@ import SplitScreen from './SplitScreen';
 const Stack = createStackNavigator();
 
 function RootStack() {
-  const [ipad, setIpad] = useState(false);
-  useEffect(() => {
-    const ipad = isIpad();
-    if (ipad) setIpad(true);
-  }, []);
   return (
-    <Stack.Navigator initialRouteName="Main">
-      {!ipad ? (
+    <Stack.Navigator>
+      {isIpad() ? (
         <Stack.Screen
-          name="Main"
-          component={TabNavigator}
+          name="Profile"
+          component={SplitScreen}
           options={{headerShown: false}}
         />
       ) : (
         <Stack.Screen
-          name="Profile"
-          component={SplitScreen}
+          name="Main"
+          component={TabNavigator}
           options={{headerShown: false}}
         />
       )}

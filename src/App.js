@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-
 import RootStack from './RootStack';
 import {setMasterNavigator} from './navigation/masterNavigator';
 import {IsTabletContextProvider} from './IsTabletContext';
