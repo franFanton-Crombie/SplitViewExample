@@ -2,8 +2,6 @@ import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabNavigator from './TabNavigator';
 import {isIpad} from '../helpers/constants';
-import {useEffect} from 'react';
-import {useState} from 'react';
 import PruebaScreen from './screens/Prueba';
 import MaintenanceScreen from './screens/Maintenance';
 import SplitScreen from './SplitScreen';
@@ -14,7 +12,7 @@ function RootStack() {
     <Stack.Navigator>
       {isIpad() ? (
         <Stack.Screen
-          name="Profile"
+          name="Split"
           component={SplitScreen}
           options={{headerShown: false}}
         />
