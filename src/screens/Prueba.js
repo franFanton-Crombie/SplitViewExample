@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text} from 'react-native';
-import AlignCenter from '../../components/AlignCenter';
+import AlignCenter from '../components/AlignCenter';
 
-const ChooseChat = () => (
+const Prueba = () => (
   <AlignCenter>
     <Text
       style={{
@@ -10,9 +10,9 @@ const ChooseChat = () => (
         opacity: 0.6,
         padding: 10,
       }}>
-      Please choose chat on the left panel!
+      Prueba PA
     </Text>
   </AlignCenter>
 );
 
-export default ChooseChat;
+export default Prueba;

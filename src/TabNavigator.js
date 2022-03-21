@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {Text, Image, Switch} from 'react-native';
+import {Text, Image, Switch, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import AlignCenter from './components/AlignCenter';
-import MessageScreen from './MessageScreen';
 import {useIsTablet} from './IsTabletContext';
-
+import Profile from './screens/Profile';
+import SplitScreen from './SplitScreen';
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
@@ -20,15 +19,9 @@ const HomeScreen = () => {
   );
 };
 
-const ProfileScreen = () => (
-  <AlignCenter>
-    <Text>Profile</Text>
-  </AlignCenter>
-);
-
 const iconMap = {
   Home: require('./assets/home.png'),
-  Messages: require('./assets/message.png'),
+  Split: require('./assets/message.png'),
   Profile: require('./assets/user.png'),
 };
 
@@ -50,9 +43,9 @@ const navigatorProps = {
 function TabNavigator() {
   return (
     <Tab.Navigator {...navigatorProps}>
+      <Tab.Screen name="Split" component={SplitScreen} />
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Messages" component={MessageScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
