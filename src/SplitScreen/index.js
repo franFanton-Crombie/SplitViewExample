@@ -5,17 +5,13 @@ import MasterSplitStack from './stacks/MasterSplitStack';
 import DetailsSplitStack from './stacks/DetailsSplitStack';
 import useSystemBack from './useSystemBack';
 
-const MessageScreenSplit = () => {
-  useSystemBack();
-
-  return (
-    <SplitView master={<MasterSplitStack />} detail={<DetailsSplitStack />} />
-  );
-};
-
 const SplitScreen = () => {
   if (isIpad()) {
-    return <MessageScreenSplit />;
+    useSystemBack();
+
+    return (
+      <SplitView master={<MasterSplitStack />} detail={<DetailsSplitStack />} />
+    );
   }
 
   return <MasterSplitStack />;
