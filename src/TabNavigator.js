@@ -4,6 +4,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Profile from './screens/Profile/Profile';
 import Home from './screens/Home/Home';
 import Message from './screens/Message/Message';
+import HomeExample from './screens/Home/HomeExample';
+import MessageExample from './screens/Message/MessageExample';
+import ProfileExample from './screens/Profile/ProfileExample';
 const Tab = createBottomTabNavigator();
 
 const iconMap = {
@@ -33,10 +36,13 @@ const navigatorProps = {
 
 function TabNavigator() {
   return (
-    <Tab.Navigator {...navigatorProps}>
+    <Tab.Navigator {...navigatorProps} backBehavior="history">
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Message" component={Message} />
       <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="HomeExample" component={HomeExample} />
+      <Tab.Screen name="MessageExample" component={MessageExample} />
+      <Tab.Screen name="ProfileExample" component={ProfileExample} />
     </Tab.Navigator>
   );
 }

@@ -3,9 +3,8 @@ import * as React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import AlignCenter from '../../components/AlignCenter';
 
-const Message = () => {
+const HomeExample = () => {
   const navigation = useNavigation();
-
   return (
     <AlignCenter>
       <Text
@@ -14,7 +13,7 @@ const Message = () => {
           opacity: 0.6,
           padding: 10,
         }}>
-        MESSAGE SCREEN
+        HOME EXAMPLE SCREEN
       </Text>
       <TouchableOpacity
         style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
@@ -33,6 +32,13 @@ const Message = () => {
       <TouchableOpacity
         style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
         onPress={() => {
+          navigation.navigate('Message');
+        }}>
+        <Text style={{color: 'white'}}>Message</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
+        onPress={() => {
           navigation.navigate('Profile');
         }}>
         <Text style={{color: 'white'}}>Profile</Text>
@@ -41,4 +47,4 @@ const Message = () => {
   );
 };
 
-export default Message;
+export default HomeExample;

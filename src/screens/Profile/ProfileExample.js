@@ -3,9 +3,8 @@ import * as React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import AlignCenter from '../../components/AlignCenter';
 
-const Message = () => {
+const ProfileExample = () => {
   const navigation = useNavigation();
-
   return (
     <AlignCenter>
       <Text
@@ -14,15 +13,8 @@ const Message = () => {
           opacity: 0.6,
           padding: 10,
         }}>
-        MESSAGE SCREEN
+        PROFILE EXAMPLE SCREEN
       </Text>
-      <TouchableOpacity
-        style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
-        onPress={() => {
-          navigation.navigate('Home');
-        }}>
-        <Text style={{color: 'white'}}>Home</Text>
-      </TouchableOpacity>
       <TouchableOpacity
         style={{borderRadius: 10, backgroundColor: 'red', padding: 10}}
         onPress={() => {
@@ -33,12 +25,26 @@ const Message = () => {
       <TouchableOpacity
         style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
         onPress={() => {
-          navigation.navigate('Profile');
+          navigation.navigate('Home');
         }}>
-        <Text style={{color: 'white'}}>Profile</Text>
+        <Text style={{color: 'white'}}>Home</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
+        onPress={() => {
+          navigation.navigate('Messanger');
+        }}>
+        <Text style={{color: 'white'}}>Messanger</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{borderRadius: 10, backgroundColor: 'blue', padding: 10}}
+        onPress={() => {
+          navigation.navigate('MessangerExample');
+        }}>
+        <Text style={{color: 'white'}}>Messanger Example</Text>
       </TouchableOpacity>
     </AlignCenter>
   );
 };
 
-export default Message;
+export default ProfileExample;

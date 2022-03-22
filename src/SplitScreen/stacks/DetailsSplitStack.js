@@ -6,6 +6,9 @@ import Maintenance from '../../screens/Maintenance/Maintenance';
 import Profile from '../../screens/Profile/Profile';
 import Home from '../../screens/Home/Home';
 import Message from '../../screens/Message/Message';
+import HomeExample from '../../screens/Home/HomeExample';
+import MessageExample from '../../screens/Message/MessageExample';
+import ProfileExample from '../../screens/Profile/ProfileExample';
 
 const DetailsStack = createStackNavigator();
 
@@ -37,6 +40,21 @@ const DetailsSplitStack = () => (
         name="Message"
         component={Message}
         options={{title: 'Message'}}
+      />
+      <DetailsStack.Screen
+        name="HomeExample"
+        component={HomeExample}
+        options={{title: 'HomeExample'}}
+      />
+      <DetailsStack.Screen
+        name="MessageExample"
+        component={MessageExample}
+        options={{title: 'MessageExample'}}
+      />
+      <DetailsStack.Screen
+        name="ProfileExample"
+        component={ProfileExample}
+        options={{title: 'ProfileExample'}}
       />
     </DetailsStack.Navigator>
   </NavigationContainer>

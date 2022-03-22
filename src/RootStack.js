@@ -8,6 +8,9 @@ import Maintenance from './screens/Maintenance/Maintenance';
 import Message from './screens/Message/Message';
 import Profile from './screens/Profile/Profile';
 import Home from './screens/Home/Home';
+import HomeExample from './screens/Home/HomeExample';
+import MessageExample from './screens/Message/MessageExample';
+import ProfileExample from './screens/Profile/ProfileExample';
 const Stack = createStackNavigator();
 
 function RootStack() {
@@ -47,6 +50,9 @@ function RootStack() {
           component={Profile}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="HomeExample" component={HomeExample} />
+        <Stack.Screen name="MessageExample" component={MessageExample} />
+        <Stack.Screen name="ProfileExample" component={ProfileExample} />
       </Stack.Navigator>
     </NavigationContainer>
   );
